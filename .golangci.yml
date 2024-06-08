@@ -1,7 +1,11 @@
 linters:
   enable:
     - gocritic
-
+    - errcheck
+    - goimports
+    - golint
+    - govet
+    - staticcheck
 linters-settings:
   gocritic:
     enabled-checks:
@@ -9,3 +13,12 @@ linters-settings:
     settings:
       ruleguard:
         rules: "rules-helloworld.go"
+
+run:
+  timeout: 5m
+  modules-download-mode: readonly
+
+issues:
+  exclude-use-default: false
+  max-issues-per-linter: 0
+  max-same-issues: 0
